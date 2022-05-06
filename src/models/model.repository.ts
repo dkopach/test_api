@@ -27,7 +27,7 @@ export class ModelRepository<
       .catch((error) => Promise.reject(error));
   }
 
-  async delete(id: number): Promise<null> {
+  async deleteModel(id: number): Promise<null> {
     return await this.delete(id)
       .then(() => {
         return Promise.resolve(null);

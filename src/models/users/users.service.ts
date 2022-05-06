@@ -32,7 +32,7 @@ export class UsersService {
   }
 
   async delete(id: number): Promise<UsersSerializer | null> {
-    return await this.usersRepository.delete(id);
+    return await this.usersRepository.deleteModel(id);
   }
 
   async create(inputs: CreateUserDto): Promise<UsersSerializer> {
@@ -48,6 +48,6 @@ export class UsersService {
   }
 
   async listWithOutId(explodeId: number): Promise<UsersSerializer[] | null> {
-    return await this.usersRepository.listWithOutId(explodeId);
+    return await this.usersRepository.listWithoutId(explodeId);
   }
 }

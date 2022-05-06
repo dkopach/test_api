@@ -59,7 +59,7 @@ export class UsersRepository extends ModelRepository<
       .catch((error) => Promise.reject(error));
   }
 
-  async listWithOutId(explodeId: number): Promise<UsersSerializer[] | []> {
+  async listWithoutId(explodeId: number): Promise<UsersSerializer[] | []> {
     return await this.find({
       ...(explodeId ? { where: { id: Not(explodeId) } } : {}),
     })
